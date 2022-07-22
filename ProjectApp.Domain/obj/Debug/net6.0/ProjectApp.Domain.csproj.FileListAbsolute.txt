@@ -1,0 +1,14 @@
+C:\Users\NathanCamilleri\source\repos\ProjectApp\ProjectApp.Domain\bin\Debug\net6.0\ProjectApp.Domain.deps.json
+C:\Users\NathanCamilleri\source\repos\ProjectApp\ProjectApp.Domain\bin\Debug\net6.0\ProjectApp.Domain.runtimeconfig.json
+C:\Users\NathanCamilleri\source\repos\ProjectApp\ProjectApp.Domain\bin\Debug\net6.0\ProjectApp.Domain.dll
+C:\Users\NathanCamilleri\source\repos\ProjectApp\ProjectApp.Domain\bin\Debug\net6.0\ProjectApp.Domain.pdb
+C:\Users\NathanCamilleri\source\repos\ProjectApp\ProjectApp.Domain\obj\Debug\net6.0\ProjectApp.Domain.csproj.AssemblyReference.cache
+C:\Users\NathanCamilleri\source\repos\ProjectApp\ProjectApp.Domain\obj\Debug\net6.0\ProjectApp.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\NathanCamilleri\source\repos\ProjectApp\ProjectApp.Domain\obj\Debug\net6.0\ProjectApp.Domain.AssemblyInfoInputs.cache
+C:\Users\NathanCamilleri\source\repos\ProjectApp\ProjectApp.Domain\obj\Debug\net6.0\ProjectApp.Domain.AssemblyInfo.cs
+C:\Users\NathanCamilleri\source\repos\ProjectApp\ProjectApp.Domain\obj\Debug\net6.0\ProjectApp.Domain.csproj.CoreCompileInputs.cache
+C:\Users\NathanCamilleri\source\repos\ProjectApp\ProjectApp.Domain\obj\Debug\net6.0\ProjectApp.Domain.dll
+C:\Users\NathanCamilleri\source\repos\ProjectApp\ProjectApp.Domain\obj\Debug\net6.0\refint\ProjectApp.Domain.dll
+C:\Users\NathanCamilleri\source\repos\ProjectApp\ProjectApp.Domain\obj\Debug\net6.0\ProjectApp.Domain.pdb
+C:\Users\NathanCamilleri\source\repos\ProjectApp\ProjectApp.Domain\obj\Debug\net6.0\ProjectApp.Domain.genruntimeconfig.cache
+C:\Users\NathanCamilleri\source\repos\ProjectApp\ProjectApp.Domain\obj\Debug\net6.0\ref\ProjectApp.Domain.dll

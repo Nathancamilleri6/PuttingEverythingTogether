@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "3KNZ9kEhiQ2XAnwIln+o2cPO9NSDrkAc7/AKuEDOZqPj7jDpi+HbQsKG9CvFYmdE++7UUmQzP+ANbyHvO4IBrQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\NathanCamilleri\\source\\repos\\SimpleAPITask\\SimpleAPITask\\SimpleAPITask.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\NathanCamilleri\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

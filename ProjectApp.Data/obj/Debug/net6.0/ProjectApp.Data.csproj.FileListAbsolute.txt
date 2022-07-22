@@ -1,0 +1,17 @@
+C:\Users\NathanCamilleri\source\repos\ProjectApp\ProjectApp.Data\bin\Debug\net6.0\ProjectApp.Data.deps.json
+C:\Users\NathanCamilleri\source\repos\ProjectApp\ProjectApp.Data\bin\Debug\net6.0\ProjectApp.Data.runtimeconfig.json
+C:\Users\NathanCamilleri\source\repos\ProjectApp\ProjectApp.Data\bin\Debug\net6.0\ProjectApp.Data.dll
+C:\Users\NathanCamilleri\source\repos\ProjectApp\ProjectApp.Data\bin\Debug\net6.0\ProjectApp.Data.pdb
+C:\Users\NathanCamilleri\source\repos\ProjectApp\ProjectApp.Data\bin\Debug\net6.0\ProjectApp.Domain.dll
+C:\Users\NathanCamilleri\source\repos\ProjectApp\ProjectApp.Data\bin\Debug\net6.0\ProjectApp.Domain.pdb
+C:\Users\NathanCamilleri\source\repos\ProjectApp\ProjectApp.Data\obj\Debug\net6.0\ProjectApp.Data.csproj.AssemblyReference.cache
+C:\Users\NathanCamilleri\source\repos\ProjectApp\ProjectApp.Data\obj\Debug\net6.0\ProjectApp.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\NathanCamilleri\source\repos\ProjectApp\ProjectApp.Data\obj\Debug\net6.0\ProjectApp.Data.AssemblyInfoInputs.cache
+C:\Users\NathanCamilleri\source\repos\ProjectApp\ProjectApp.Data\obj\Debug\net6.0\ProjectApp.Data.AssemblyInfo.cs
+C:\Users\NathanCamilleri\source\repos\ProjectApp\ProjectApp.Data\obj\Debug\net6.0\ProjectApp.Data.csproj.CoreCompileInputs.cache
+C:\Users\NathanCamilleri\source\repos\ProjectApp\ProjectApp.Data\obj\Debug\net6.0\ProjectApp.Data.csproj.CopyComplete
+C:\Users\NathanCamilleri\source\repos\ProjectApp\ProjectApp.Data\obj\Debug\net6.0\ProjectApp.Data.dll
+C:\Users\NathanCamilleri\source\repos\ProjectApp\ProjectApp.Data\obj\Debug\net6.0\refint\ProjectApp.Data.dll
+C:\Users\NathanCamilleri\source\repos\ProjectApp\ProjectApp.Data\obj\Debug\net6.0\ProjectApp.Data.pdb
+C:\Users\NathanCamilleri\source\repos\ProjectApp\ProjectApp.Data\obj\Debug\net6.0\ProjectApp.Data.genruntimeconfig.cache
+C:\Users\NathanCamilleri\source\repos\ProjectApp\ProjectApp.Data\obj\Debug\net6.0\ref\ProjectApp.Data.dll
