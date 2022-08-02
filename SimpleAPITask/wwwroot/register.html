@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="css/site.css" />
+    <link rel="stylesheet" href="css/register.css" />
+</head>
+<body>
+    <h1>Register</h1>
+    <form action="javascript:void(0);" method="POST" onsubmit="registerUser()">
+        <span class="error" id="errorname"></span></p>
+        <input type="text" id="register-userName" placeholder="Name"><br>
+        <input type="text" id="register-email" placeholder="Email"><br>
+        <input type="text" id="register-password" placeholder="Password">
+        <input type="submit" value="Register">
+    </form>
+    <div class="loadLoginFromRegister">
+        <a href="login.html">Already Registered? Login here!</a>
+    </div>
+
+    <script src="js/register.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+    </script>
+</body>
+</html>

@@ -1,50 +1,78 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SimpleAPITask.DTOs;
-using SimpleAPITask.Models;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
+using SimpleAPITask.Interfaces;
 
 namespace SimpleAPITask.Controllers
 {
+    [Authorize]
     [ApiController]
-    [Route("[controller]")]
+    [Route("/api/projects")]
     public class ProjectController : ControllerBase
     {
-        public static List<Project> projects = new List<Project>
+        private readonly IProjects _IProject;
+
+        public ProjectController(IProjects IProject)
         {
-            new Project(1, "Project 1", new List<string> { "Comment 1" }),
-            new Project(2, "Project 2", new List<string> { "Comment 2" }),
-            new Project(3, "Project 3", new List<string> { "Comment 3" }),
-        };
+            _IProject = IProject;
+        }
 
         [HttpGet]
-        public IEnumerable<Project> RetrieveProjects()
+        public async Task<ActionResult<List<ProjectOutputDTO>>> GetProjects()
         {
-            return projects;
+            return await Task.FromResult(_IProject.GetProjects());
         }
 
         [HttpGet("{id}")]
-        public Project RetrieveProject(int Id)
+        public async Task<ActionResult<ProjectOutputDTO>> GetProject(int Id)
         {
-            Project project = projects.Find(p => p.Id == Id);
+            var project = await Task.FromResult(_IProject.GetProject(Id));
+            if(project == null)
+            {
+                return NotFound();
+            }
             return project;
         }
 
-        [HttpPost]
-        public List<Project> AddProject([FromBody] ProjectDTO project)
+        [HttpPost("{id}")]
+        public async Task<ActionResult<ProjectOutputDTO>> EditProject(int id, [FromBody] ProjectOutputDTO Project)
         {
-            projects.Add(new Project(project.Id, project.Name, new List<string> { project.Comment }));
-            return projects;
+            if (id != Project.Id)
+            {
+                return BadRequest();
+            }
+
+            try
+            {
+                _IProject.EditProject(id, Project);
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!ProjectExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+            return await Task.FromResult(Project);
         }
 
-        [HttpPut("{id}")]
-        public List<Project> AddCommentToProject(int Id, [FromBody] ProjectDTO project)
+        [HttpPost]
+        public async Task<ActionResult<ProjectInputDTO>> AddProject([FromBody] ProjectInputDTO project)
         {
-            Project projectToEdit = projects.Find(p => p.Id == Id);
-            int index = projects.IndexOf(projectToEdit);
+            _IProject.AddProject(project);
+            return await Task.FromResult(project);
+        }
 
-            projects[index].Comments.Add(project.Comment);
-
-            return projects;
+        private bool ProjectExists(int id)
+        {
+            return _IProject.CheckProject(id);
         }
     }
 }

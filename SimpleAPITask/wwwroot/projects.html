@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Project Management</title>
+    <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+    <div class="title">
+        <p>Project Management</p>
+    </div>
+
+    <a href="home.html">Home Page</a>
+
+    <div class="projectsTable">
+        <table>
+            <tr>
+                <th></th>
+                <th>Projects</th>
+                <th></th>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <th>Creator</th>
+                <th></th>
+            </tr>
+            <tbody id="projects"></tbody>
+        </table>
+    </div>
+
+    <h3>Add Project</h3>
+    <form action="javascript:void(0);" method="POST" onsubmit="addProject()">
+        <input type="text" id="add-projectName" placeholder="Project Name">
+        <input type="submit" value="Add">
+    </form>
+
+    <div id="projectModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content" id="modal-content">
+          <span class="close">&times;</span>
+          <div id="modalProjectNameOuter">
+            <h1>Project Name:</h1>
+            <p id="modalProjectName"></p>
+  
+            <div id="editForm">
+              <h3>Edit Project Name</h3>
+              <form action="javascript:void(0);" onsubmit="editProject()">
+                  <input type="hidden" id="edit-projectId">
+                  <input type="text" id="edit-projectName">
+                  <input type="submit" value="Save">
+                  <a onclick="closeInput()" aria-label="Close">&#10006;</a>
+              </form>
+          </div>
+        </div>
+
+          <h1>Creator:</h1>
+          <p id="modalProjectCreator"></p>
+
+          <h1 id="modalProjectAssigneesTitle">Assignees:</h1>
+          <ul id="modalProjectAssignees"></ul>
+
+          <div id="modalProjectCommentsOuter">
+            <h1>Comments:</h1>
+            <ul id="modalProjectComments"></ul>
+          </div>
+
+          <h3>Add Comment</h3>
+          <form action="javascript:void(0);" method="POST" onsubmit="addComment()">
+              <input type="text" id="comment-comment" placeholder="Comment">
+              <input type="hidden" id="comment-projectId" placeholder="Project Id">
+              <input type="submit" value="Add">
+          </form>
+
+          <div id="modalAssignUserOuter">
+            <h3>Assign User</h3>
+            <form action="javascript:void(0);" method="POST" onsubmit="addAssignee()">
+                User: <select name="userToAssign" id="userToAssign">
+                    <option value="" selected="selected">Select user</option>
+                    </select>
+                <input type="hidden" id="assign-projectId">
+                <input type="submit" value="Add">
+            </form>
+          </div>
+        </div>
+      
+      </div>
+
+    <script src="js/site.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+        getProjectsForTable();
+    </script>
+</body>
+</html>

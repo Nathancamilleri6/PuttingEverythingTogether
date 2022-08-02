@@ -1,9 +1,9 @@
 ﻿namespace SimpleAPITask.DTOs
 {
-    public class ProjectDTO
+    public class ProjectOutputDTO
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Comment { get; set; }
+        public int CreatorId { get; set; }
     }
 }

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>User Management</title>
+    <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+    <div class="title">
+        <p>User Management</p>
+    </div>
+
+    <a href="home.html">Home Page</a>
+
+    <div class="usersTable">
+        <table>
+            <tr>
+                <th>Users</th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Date Created</th>
+            </tr>
+            <tbody id="users"></tbody>
+        </table>
+    </div>
+
+    <script src="js/site.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+        getUsersForTable();
+    </script>
+</body>
+</html>
