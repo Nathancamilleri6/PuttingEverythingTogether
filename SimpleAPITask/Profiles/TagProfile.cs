@@ -10,6 +10,8 @@ namespace SimpleAPITask.Profiles
         {
             CreateMap<Tag, TagInputDTO>();
             CreateMap<TagInputDTO, Tag>();
+            CreateMap<Tag, Project_Tag>();
+            CreateMap<Project_Tag, Tag>();
         }
     }
 }

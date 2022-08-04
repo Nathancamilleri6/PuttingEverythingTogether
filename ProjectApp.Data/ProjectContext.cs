@@ -18,6 +18,7 @@ namespace ProjectApp.Data
         public virtual DbSet<Tag>? Tags { get; set; }
         public virtual DbSet<Comment>? Comments { get; set; }
         public virtual DbSet<Project_Assignee>? Assignees { get; set; }
+        public virtual DbSet<Project_Tag>? ProjectTags { get; set; }
         public virtual DbSet<UserRefreshToken>? UserRefreshTokens { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

@@ -44,42 +44,65 @@
   
             <div id="editForm">
               <h3>Edit Project Name</h3>
-              <form action="javascript:void(0);" onsubmit="editProject()">
-                  <input type="hidden" id="edit-projectId">
-                  <input type="text" id="edit-projectName">
-                  <input type="submit" value="Save">
-                  <a onclick="closeInput()" aria-label="Close">&#10006;</a>
-              </form>
-          </div>
+                <form action="javascript:void(0);" onsubmit="editProject()">
+                    <input type="hidden" id="edit-projectId">
+                    <input type="text" id="edit-projectName">
+                    <input type="submit" value="Save">
+                    <a onclick="closeEditForm()" aria-label="Close">&#10006;</a>
+                </form>
+            </div>
         </div>
 
           <h1>Creator:</h1>
           <p id="modalProjectCreator"></p>
 
-          <h1 id="modalProjectAssigneesTitle">Assignees:</h1>
-          <ul id="modalProjectAssignees"></ul>
+          <div id="modalProjectAssigneesOuter">
+            <h1 id="modalProjectAssigneesTitle">Assignees:</h1>
+            <ul id="modalProjectAssignees"></ul>
+
+            <div id="assignUserForm">
+                <h3>Assign User</h3>
+                <form action="javascript:void(0);" method="POST" onsubmit="addAssignee()">
+                    User: <select name="userToAssign" id="userToAssign">
+                        <option value="" selected="selected">Select user</option>
+                        </select>
+                    <input type="hidden" id="assign-projectId">
+                    <input type="submit" value="Add">
+                    <a onclick="closeAssignUserForm()" aria-label="Close">&#10006;</a>
+                </form>
+            </div>
+          </div>
 
           <div id="modalProjectCommentsOuter">
             <h1>Comments:</h1>
             <ul id="modalProjectComments"></ul>
+
+            <div id="addCommentForm">
+                <h3>Add Comment</h3>
+                  <form action="javascript:void(0);" onsubmit="addComment()">
+                      <input type="hidden" id="comment-projectId">
+                      <input type="text" id="comment-comment" placeholder="Comment">
+                      <input type="submit" value="Add">
+                      <a onclick="closeAddCommentForm()" aria-label="Close">&#10006;</a>
+                  </form>
+              </div>
           </div>
 
-          <h3>Add Comment</h3>
-          <form action="javascript:void(0);" method="POST" onsubmit="addComment()">
-              <input type="text" id="comment-comment" placeholder="Comment">
-              <input type="hidden" id="comment-projectId" placeholder="Project Id">
-              <input type="submit" value="Add">
-          </form>
+          <div id="modalProjectTagsOuter">
+            <h1 id="modalProjectTagsTitle">Tags:</h1>
+            <ul id="modalProjectTags"></ul>
 
-          <div id="modalAssignUserOuter">
-            <h3>Assign User</h3>
-            <form action="javascript:void(0);" method="POST" onsubmit="addAssignee()">
-                User: <select name="userToAssign" id="userToAssign">
-                    <option value="" selected="selected">Select user</option>
-                    </select>
-                <input type="hidden" id="assign-projectId">
-                <input type="submit" value="Add">
-            </form>
+            <div id="addTagForm">
+                <h3>Add Tag</h3>
+                <form action="javascript:void(0);" method="POST" onsubmit="addTagToProject()">
+                    Tag: <select name="tagToAdd" id="tagToAdd">
+                        <option value="" selected="selected">Select tag</option>
+                        </select>
+                    <input type="hidden" id="tag-projectId">
+                    <input type="submit" value="Add">
+                    <a onclick="closeAddTagForm()" aria-label="Close">&#10006;</a>
+                </form>
+              </div>
           </div>
         </div>
       

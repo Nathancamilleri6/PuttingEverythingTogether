@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tag Management</title>
+    <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+    <div class="title">
+        <p>Tag Management</p>
+    </div>
+
+    <a href="home.html">Home Page</a>
+
+    <div class="tagsTable">
+        <table>
+            <tr>
+                <th>Tags</th>
+            </tr>
+            <tr>
+                <th>Name</th>
+            </tr>
+            <tbody id="tags"></tbody>
+        </table>
+    </div>
+
+    <h3>Add Tag</h3>
+    <form action="javascript:void(0);" method="POST" onsubmit="addTag()">
+        <input type="text" id="add-tagName" placeholder="Tag Name">
+        <input type="submit" value="Add">
+    </form>
+
+    <script src="js/site.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+        getTagsForTable();
+    </script>
+</body>
+</html>

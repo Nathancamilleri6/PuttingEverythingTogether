@@ -35,6 +35,7 @@ namespace SimpleAPITask
             services.AddTransient<IUsers, UserRepository>();
             services.AddTransient<IProjects, ProjectRepository>();
             services.AddTransient<ITags, TagRepository>();
+            services.AddTransient<ITagProjects, TagProjectRepository>();
             services.AddTransient<IComments, CommentRepository>();
             services.AddTransient<IAssignees, AssigneeRepository>();
             services.AddTransient<ITokens, TokenRepository>();

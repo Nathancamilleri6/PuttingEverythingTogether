@@ -6,7 +6,7 @@ namespace SimpleAPITask.Interfaces
 {
     public interface ITags
     {
-        public List<Tag> GetTags();
         public void AddTag(TagInputDTO tag);
+        public List<Tag> GetTags();
     }
 }

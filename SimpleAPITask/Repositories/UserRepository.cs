@@ -36,26 +36,6 @@ namespace SimpleAPITask.Repositories
             }
         }
 
-        public UserOutputDTO GetUserDetails(int id)
-        {
-            try
-            {
-                UserOutputDTO user = _mapper.Map<UserOutputDTO>(_dbContext.Users.Find(id));
-                if (user != null)
-                {
-                    return user;
-                }
-                else
-                {
-                    throw new ArgumentNullException();
-                }
-            }
-            catch
-            {
-                throw;
-            }
-        }
-
         public void AddUser(UserInputDTO user)
         {
             try
@@ -80,10 +60,9 @@ namespace SimpleAPITask.Repositories
             }
         }
 
-        public User GetUser(UserInputDTO user)
+        public User GetUser(string email)
         {
-            user.Password = HashPassword(user.Password);
-            return _dbContext.Users.FirstOrDefault(u => u.Email == user.Email && u.Password == user.Password);
+            return _dbContext.Users.FirstOrDefault(u => u.Email == email);
         }
 
         public string HashPassword(string password)

@@ -23,30 +23,21 @@ namespace SimpleAPITask.Repositories
             _httpContextAccessor = httpContextAccessor;
         }
 
-        public List<ProjectOutputDTO> GetProjects()
+        public List<ProjectOutputDTO> GetProjects(int userId)
         {
             try
             {
-                return _mapper.Map<List<ProjectOutputDTO>>(_dbContext.Projects);
+               // var assignees = _dbContext.Assignees.Where(assignee => assignee.AssigneeId == userId);
+               // var createdProjects = _dbContext.Projects.Where(project => project.CreatorId == userId);
+
+                var projects = _dbContext.Projects.Where(project => project.CreatorId == userId ||
+                                    _dbContext.Assignees.Any(assignee => assignee.AssigneeId == userId && assignee.ProjectId == project.Id));
+                return _mapper.Map<List<ProjectOutputDTO>>(projects);
             }
             catch
             {
                 throw;
             }
-        }
-
-        public ProjectOutputDTO GetProject(int Id)
-        {
-            try
-            {
-                var project = _dbContext.Projects.Find(Id);
-                return _mapper.Map<ProjectOutputDTO>(project);
-            }
-            catch
-            {
-                throw;
-            }
-
         }
 
         public void EditProject(int id, ProjectOutputDTO Project)

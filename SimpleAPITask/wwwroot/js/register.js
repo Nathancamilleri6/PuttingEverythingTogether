@@ -9,8 +9,6 @@ function registerUser() {
         password: registerPasswordTextBox.value.trim()
     };
 
-    console.log(item)
-
     fetch('api/users', {
         method: 'POST',
         headers: {

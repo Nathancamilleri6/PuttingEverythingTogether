@@ -20,11 +20,12 @@ namespace SimpleAPITask.Repositories
             _dbContext = dbContext;
         }
 
-        public List<Tag> GetTags()
+        public void AddTag(TagInputDTO tag)
         {
             try
             {
-                return _mapper.Map<List<Tag>>(_dbContext.Tags); //_dbContext.Users.ToList();
+                _dbContext.Tags.Add(_mapper.Map<Tag>(tag));
+                _dbContext.SaveChanges();
             }
             catch
             {
@@ -32,12 +33,11 @@ namespace SimpleAPITask.Repositories
             }
         }
 
-        public void AddTag(TagInputDTO tag)
+        public List<Tag> GetTags()
         {
             try
             {
-                _dbContext.Tags.Add(_mapper.Map<Tag>(tag));
-                _dbContext.SaveChanges();
+                return _mapper.Map<List<Tag>>(_dbContext.Tags);
             }
             catch
             {

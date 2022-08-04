@@ -30,9 +30,10 @@ namespace SimpleAPITask.Controllers
             return await Task.FromResult(_IUser.GetUserDetails());
         }
 
-        public async Task<ActionResult<User>> GetUser([FromBody] UserInputDTO User)
+        [HttpGet("{id}")]
+        public async Task<ActionResult<User>> GetUser(string id)
         {
-            return await Task.FromResult(_IUser.GetUser(User));
+            return await Task.FromResult(_IUser.GetUser(id));
         }
 
         [AllowAnonymous]

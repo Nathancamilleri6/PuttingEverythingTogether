@@ -1,11 +1,9 @@
-﻿using AutoMapper;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ProjectApp.Domain;
 using SimpleAPITask.DTOs;
 using SimpleAPITask.Interfaces;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace SimpleAPITask.Controllers
@@ -28,7 +26,6 @@ namespace SimpleAPITask.Controllers
             return await Task.FromResult(_IComment.GetProjectComments(id));
         }
 
-        // FIX DATETIME ISSUE (COMING UP AS 0001-01-01T00:00:00)
         [HttpPost]
         public async Task<ActionResult<CommentInputDTO>> AddComment([FromBody] CommentInputDTO Comment)
         {

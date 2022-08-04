@@ -20,17 +20,17 @@ namespace SimpleAPITask.Controllers
             _ITag = ITag;
         }
 
-        [HttpGet]
-        public async Task<ActionResult<List<Tag>>> GetTags()
-        {
-            return await Task.FromResult(_ITag.GetTags());
-        }
-
         [HttpPost]
         public async Task<ActionResult<TagInputDTO>> AddTag([FromBody] TagInputDTO Tag)
         {
             _ITag.AddTag(Tag);
             return await Task.FromResult(Tag);
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<List<Tag>>> GetTags()
+        {
+            return await Task.FromResult(_ITag.GetTags());
         }
     }
 }

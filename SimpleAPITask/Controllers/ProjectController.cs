@@ -20,21 +20,10 @@ namespace SimpleAPITask.Controllers
             _IProject = IProject;
         }
 
-        [HttpGet]
-        public async Task<ActionResult<List<ProjectOutputDTO>>> GetProjects()
-        {
-            return await Task.FromResult(_IProject.GetProjects());
-        }
-
         [HttpGet("{id}")]
-        public async Task<ActionResult<ProjectOutputDTO>> GetProject(int Id)
+        public async Task<ActionResult<List<ProjectOutputDTO>>> GetProjects(int id)
         {
-            var project = await Task.FromResult(_IProject.GetProject(Id));
-            if(project == null)
-            {
-                return NotFound();
-            }
-            return project;
+            return await Task.FromResult(_IProject.GetProjects(id));
         }
 
         [HttpPost("{id}")]

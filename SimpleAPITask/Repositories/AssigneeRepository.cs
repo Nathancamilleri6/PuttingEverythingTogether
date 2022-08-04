@@ -34,21 +34,18 @@ namespace SimpleAPITask.Repositories
 
         public List<UserOutputDTO> GetProjectAssignees(int id)
         {
-            var users = _dbContext.Users.Where(user => _dbContext.Assignees.All(p2 => p2.AssigneeId == user.Id)).ToList();
-            return _mapper.Map<List<UserOutputDTO>>(users);
-
-            /*List<UserOutputDTO> projectAssignees = new();
-            var assignees = _mapper.Map<IList<AssigneeInputDTO>>(_context.Assignees);
+            List<UserOutputDTO> projectAssignees = new();
+            var assignees = _mapper.Map<IList<AssigneeInputDTO>>(_dbContext.Assignees);
 
             foreach (AssigneeInputDTO assignee in assignees)
             {
                 if (assignee.ProjectId == id)
                 {
-                    projectAssignees.Add(_mapper.Map<UserOutputDTO>(_context.Users.Where(x => x.Id == assignee.AssigneeId).FirstOrDefault()));
+                    projectAssignees.Add(_mapper.Map<UserOutputDTO>(_dbContext.Users.Where(user => user.Id == assignee.AssigneeId).FirstOrDefault()));
                 }
             }
 
-            return projectAssignees;*/
+            return projectAssignees;
         }
 
         public List<UserOutputDTO> GetProjectNonAssignees(int id)

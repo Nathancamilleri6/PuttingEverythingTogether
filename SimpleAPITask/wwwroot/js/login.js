@@ -16,6 +16,7 @@ async function loginUser() {
         body: JSON.stringify(item)
     })
         .then(() => {
+            document.cookie = `email=${loginEmailTextBox.value.trim()}`
             loginEmailTextBox.value = '';
             loginPasswordTextBox.value = '';
             loadHomePage();
